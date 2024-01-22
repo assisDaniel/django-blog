@@ -29,8 +29,8 @@ h1, h2, h3, h4{
     width: 100%;;
 }
 
-.top-menu, top-menu:hover, top-enu:visited{
-    color:darkslategrey;
+.top-menu, top-menu:hover, top-menu:visited{
+    color: aliceblue;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
@@ -50,12 +50,12 @@ h1, h2, h3, h4{
 }
 
 .btn-secondary, .btn-secondary:visited{
-    color: aliceblue;
+    color: darkslategrey;
     background: none;
-    border-color: aliceblue;
+    border-color: black;
 }
 
 .btn-secondary:hover{
-    color: red;
-    background-color: aliceblue;
+    color: darkslategrey;
+    background-color: darkgray;
 }
