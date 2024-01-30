@@ -7,7 +7,7 @@
                 <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}">
                     {% include './icons/pencil-fill.svg' %}
                 </a>
-                <a class="btn btn-secondary" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-secondary" href="{% url 'post_remove' pk=post.pk %}"><i class="fa-solid fa-trash"></i></a>
             {% endif %}
         </aside>
         {% if post.published_date %}
@@ -20,4 +20,27 @@
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    <hr>
+    <a class="btn btn-secondary" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+    {% for comments in post.comments.all %}
+        {% if user.is_authenticated or comments.approved_comment %}
+            <div class="comment">
+                <div class="date">
+                    {{ comments.created_date }}
+                    {% if not comments.approved_comment %}
+                        <a class="btn btn-secondary" href="{% url 'comment_remove'  pk=comments.pk %}">
+                            <i class="fa-solid fa-thumbs-down"></i>
+                        </a>
+                        <a class="btn btn-secondary" href="{% url 'comment_approve' pk=comments.pk %}">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </a>
+                    {% endif %}
+                </div>
+                <strong>{{ comments.author }}</strong>
+                <p>{{ comments.text|linebreaks }}</p>
+            </div>
+        {% endif %}
+    {% empty %}
+        <p>No comments here yet :(</p>
+    {% endfor %}
 {% endblock %}

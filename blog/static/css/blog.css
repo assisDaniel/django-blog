@@ -6,7 +6,7 @@
 }
 
 .page-header h1, .page-header h1 a,
-.page-header h1 a:visited, .page-header h1 a:active{
+.page-header h1 a:visited, .page-header h1 a:active {
     color: lightgray;
     font-size: 36pt;
     text-decoration: none;
@@ -29,7 +29,7 @@ h1, h2, h3, h4{
     width: 100%;;
 }
 
-.top-menu, top-menu:hover, top-menu:visited{
+.top-menu, .top-menu:hover, .top-menu:visited{
     color: aliceblue;
     float: right;
     font-size: 26pt;
@@ -58,4 +58,8 @@ h1, h2, h3, h4{
 .btn-secondary:hover{
     color: darkslategrey;
     background-color: darkgray;
+}
+
+.comment{
+    margin: 20px 0px 20px 20px;
 }
